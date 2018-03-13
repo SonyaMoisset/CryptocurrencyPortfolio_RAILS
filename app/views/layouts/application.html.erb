@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Crypto</title>
+    <title>Crypto Currency Portfolio</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%= link_to "Home", root_path %>
+    <%= link_to "About Us", home_about_path %>
+    
     <%= yield %>
   </body>
 </html>
