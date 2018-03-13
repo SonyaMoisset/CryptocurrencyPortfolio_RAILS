@@ -9,9 +9,8 @@
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <%= link_to "About Us", home_about_path %>
-    
+    <%= render 'home/navbar' %>
+
     <%= yield %>
   </body>
 </html>
