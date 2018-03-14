@@ -1,0 +1,12 @@
+<h3>Crypto Currency Lookup</h3>
+<br>
+
+<%= form_tag home_lookup_path, :method => 'POST' do %>
+    <%= text_field_tag 'sym', nil, placeholder: 'Enter Crypto Symbol', size: 50 %>
+    <%= submit_tag 'Lookup Stock Quote' %>
+<% end %>
+
+<br>
+
+
+<%= @symbol %>
