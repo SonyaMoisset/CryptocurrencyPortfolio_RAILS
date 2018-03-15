@@ -36,6 +36,7 @@
                 <td>$<%= x["price_usd"].to_d * cryptocurrency.amount_owned %></td>
                 <td>$<%= cryptocurrency.cost_per * cryptocurrency.amount_owned %></td>
                 <td>$<%= (x["price_usd"].to_d * cryptocurrency.amount_owned) - (cryptocurrency.cost_per * cryptocurrency.amount_owned) %></td>
+                <% @profit_loss += (x["price_usd"].to_d * cryptocurrency.amount_owned) - (cryptocurrency.cost_per * cryptocurrency.amount_owned) %>
             <% end %>
       <% end %>
         
@@ -46,6 +47,10 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<strong>Portfolio Profit/Loss:</strong> <%= number_to_currency(@profit_loss) %>
 
 <br>
 

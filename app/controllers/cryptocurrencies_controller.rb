@@ -15,6 +15,8 @@ class CryptocurrenciesController < ApplicationController
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @lookup_crypto = JSON.parse(@response)
+
+    @profit_loss = 0
   end
 
   # GET /cryptocurrencies/1
