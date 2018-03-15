@@ -1,5 +1,6 @@
 class CryptocurrenciesController < ApplicationController
   before_action :set_cryptocurrency, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /cryptocurrencies
   # GET /cryptocurrencies.json
