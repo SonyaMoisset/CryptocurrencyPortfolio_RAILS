@@ -75,7 +75,7 @@ class CryptocurrenciesController < ApplicationController
     end
     
     def correct_user
-      @correct = current_user.cryptocurrencies.find(id: params[:id])
+      @correct = current_user.cryptocurrencies.find_by(id: params[:id])
       redirect_to cryptocurrencies_path, notice: "Not Authorised to edit this entry" if @correct.nil?
     end
 end
