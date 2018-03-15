@@ -19,4 +19,5 @@
 </p>
 
 <%= link_to 'Edit', edit_cryptocurrency_path(@cryptocurrency) %> |
+<%= link_to 'Delete', cryptocurrency_path(@cryptocurrency), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', cryptocurrencies_path %>
