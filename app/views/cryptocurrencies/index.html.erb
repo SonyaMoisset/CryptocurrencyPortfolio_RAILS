@@ -13,15 +13,17 @@
 
   <tbody>
     <% @cryptocurrencies.each do |cryptocurrency| %>
-      <tr>
-        <td><%= cryptocurrency.symbol %></td>
-        <td><%= cryptocurrency.user_id %></td>
-        <td><%= cryptocurrency.cost_per %></td>
-        <td><%= cryptocurrency.amount_owned %></td>
-        <td><%= link_to 'Show', cryptocurrency %></td>
-        <td><%= link_to 'Edit', edit_cryptocurrency_path(cryptocurrency) %></td>
-        <td><%= link_to 'Destroy', cryptocurrency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if cryptocurrency.user_id == current_user.id %>
+        <tr>
+          <td><%= cryptocurrency.symbol %></td>
+          <td><%= cryptocurrency.user_id %></td>
+          <td><%= cryptocurrency.cost_per %></td>
+          <td><%= cryptocurrency.amount_owned %></td>
+          <td><%= link_to 'Show', cryptocurrency %></td>
+          <td><%= link_to 'Edit', edit_cryptocurrency_path(cryptocurrency) %></td>
+          <td><%= link_to 'Destroy', cryptocurrency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
