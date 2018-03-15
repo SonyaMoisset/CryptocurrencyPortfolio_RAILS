@@ -6,8 +6,10 @@
     <tr>
       <th>Name</th>
       <th>Current Price</th>
-      <th>Total Value</th>
-      <th>Cost per</th>
+      <th>Current Value</th>
+      <th>Total Paid</th>
+      <th>Profit/Loss</th>
+      <th>Cost Paid per</th>
       <th>Amount owned</th>
     </tr>
   </thead>
@@ -24,6 +26,8 @@
                 <td><%= link_to x["name"], cryptocurrency %></td>
                 <td>$<%= x["price_usd"] %></td>
                 <td>$<%= x["price_usd"].to_d * cryptocurrency.amount_owned %></td>
+                <td>$<%= cryptocurrency.cost_per * cryptocurrency.amount_owned %></td>
+                <td>$<%= (x["price_usd"].to_d * cryptocurrency.amount_owned) - (cryptocurrency.cost_per * cryptocurrency.amount_owned) %></td>
             <% end %>
       <% end %>
         
