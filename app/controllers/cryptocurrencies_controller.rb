@@ -7,6 +7,14 @@ class CryptocurrenciesController < ApplicationController
   # GET /cryptocurrencies.json
   def index
     @cryptocurrencies = Cryptocurrency.all
+
+    require 'net/http'
+    require 'json'
+
+    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @uri = URI(@url)
+    @response = Net::HTTP.get(@uri)
+    @lookup_crypto = JSON.parse(@response)
   end
 
   # GET /cryptocurrencies/1

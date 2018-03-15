@@ -4,6 +4,7 @@
   <br>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Symbol</th>
       <th>Cost per</th>
       <th>Amount owned</th>
@@ -14,7 +15,16 @@
   <tbody>
     <% @cryptocurrencies.each do |cryptocurrency| %>
       <% if cryptocurrency.user_id == current_user.id %>
+        <% if cryptocurrency.symbol %>
+          <% cryptocurrency.symbol = cryptocurrency.symbol.upcase %>
+        <% end %>
         <tr>
+        <% for x in @lookup_crypto %>
+            <% if cryptocurrency.symbol == x["symbol"] %>
+                <td><%= x["name"] %></td>
+            <% end %>
+      <% end %>
+        
           <td><%= cryptocurrency.symbol %></td>
           <td><%= cryptocurrency.cost_per %></td>
           <td><%= cryptocurrency.amount_owned %></td>
