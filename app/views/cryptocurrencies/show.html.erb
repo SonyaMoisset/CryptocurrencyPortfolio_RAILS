@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @cryptocurrency.symbol %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cryptocurrency.user_id %>
+</p>
+
+<p>
+  <strong>Cost per:</strong>
+  <%= @cryptocurrency.cost_per %>
+</p>
+
+<p>
+  <strong>Amount owned:</strong>
+  <%= @cryptocurrency.amount_owned %>
+</p>
+
+<%= link_to 'Edit', edit_cryptocurrency_path(@cryptocurrency) %> |
+<%= link_to 'Back', cryptocurrencies_path %>
