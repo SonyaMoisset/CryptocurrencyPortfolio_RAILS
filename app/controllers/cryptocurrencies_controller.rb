@@ -1,6 +1,7 @@
 class CryptocurrenciesController < ApplicationController
   before_action :set_cryptocurrency, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   # GET /cryptocurrencies
   # GET /cryptocurrencies.json
@@ -71,5 +72,10 @@ class CryptocurrenciesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cryptocurrency_params
       params.require(:cryptocurrency).permit(:symbol, :user_id, :cost_per, :amount_owned)
+    end
+    
+    def correct_user
+      @correct = current_user.cryptocurrencies.find(id: params[:id])
+      redirect_to cryptocurrencies_path, notice: "Not Authorised to edit this entry" if @correct.nil?
     end
 end
