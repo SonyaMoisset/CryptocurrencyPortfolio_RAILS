@@ -1,23 +1,45 @@
-<p>
-  <strong>Symbol:</strong>
-  <%= @cryptocurrency.symbol %>
-</p>
+<% for x in @show_crypto %>
+    <% if @cryptocurrency.symbol.upcase == x["symbol"] %>
+        <% crypto_name = x["name"] %>
+        <% crypto_price = x["price_usd"] %>
+        <br>
+        <% crypto_rank = x["rank"] %>
+        <br>
+    <% end %>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @cryptocurrency.user_id %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= crypto_name %></h3>
+  </div>
 
-<p>
-  <strong>Cost per:</strong>
-  <%= @cryptocurrency.cost_per %>
-</p>
+  <div class="panel-body">
+    <p>
+      <h1><%= @cryptocurrency.symbol.upcase %></h1>
+    </p>
 
-<p>
-  <strong>Amount owned:</strong>
-  <%= @cryptocurrency.amount_owned %>
-</p>
+    <p>
+      <strong>Current Price:</strong> <%= crypto_price %>
+    </p>
 
-<%= link_to 'Edit', edit_cryptocurrency_path(@cryptocurrency) %> |
-<%= link_to 'Delete', cryptocurrency_path(@cryptocurrency), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', cryptocurrencies_path %>
+    <p>
+      <strong>Rank:</strong> <%= crypto_rank %>
+    </p>
+
+    <p>
+      <strong>Cost per:</strong>
+      <%= @cryptocurrency.cost_per %>
+    </p>
+
+    <p>
+      <strong>Amount owned:</strong>
+      <%= @cryptocurrency.amount_owned %>
+    </p>
+  </div>
+
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_cryptocurrency_path(@cryptocurrency) %> |
+    <%= link_to 'Delete', cryptocurrency_path(@cryptocurrency), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Back', cryptocurrencies_path %>
+  </div>
+</div>

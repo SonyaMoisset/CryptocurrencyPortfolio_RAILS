@@ -22,6 +22,13 @@ class CryptocurrenciesController < ApplicationController
   # GET /cryptocurrencies/1
   # GET /cryptocurrencies/1.json
   def show
+    require 'net/http'
+    require 'json'
+
+    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @uri = URI(@url)
+    @response = Net::HTTP.get(@uri)
+    @show_crypto = JSON.parse(@response)
   end
 
   # GET /cryptocurrencies/new
