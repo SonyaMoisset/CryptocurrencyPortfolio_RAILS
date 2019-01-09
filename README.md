@@ -1,6 +1,7 @@
 # README
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/SonyaMoisset/CryptocurrencyPortfolio_RAILS.svg)](https://greenkeeper.io/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/SonyaMoisset/CryptocurrencyPortfolio_RAILS?branch=master)](https://bettercodehub.com/)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
