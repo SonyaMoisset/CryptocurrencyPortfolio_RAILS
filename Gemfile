@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '>= 3.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'nokogiri', '>= 1.8.5'
+gem 'activejob', '>= 5.1.6.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
