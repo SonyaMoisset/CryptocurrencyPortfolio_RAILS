@@ -67,7 +67,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.2.2)
-    crass (1.0.6)
+    crass (1.0.7)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
